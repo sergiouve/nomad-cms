@@ -1,0 +1,13 @@
+{
+    "name": "nomad/nomad-cms",
+    "description": "A nomad CMS",
+    "type": "cms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergio Uve",
+            "email": "sergiouve@gmail.com"
+        }
+    ],
+    "require": {}
+}
