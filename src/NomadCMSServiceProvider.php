@@ -9,21 +9,16 @@ class NomadCMSServiceProvider extends LaravelProvider
 {
     public function boot()
     {
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
-
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nomadcms');
         $this->publishes([
-            __DIR__ . '/../config/nomadcms.php',
+            __DIR__ . '/../config/nomadcms.php' => config_path('nomadcms.php'),
         ]);
-
-        $this->app->bind(NomadCMS::class, function($app) {
-            $config = $app['config']['nomadcms'];
-
-            return new NomadCMS($config);
-        });
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/nomadcms.php', 'nomadcms.php');
+        $this->mergeConfigFrom(__DIR__ . '/../config/nomadcms.php', 'nomadcms');
     }
 }

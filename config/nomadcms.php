@@ -1,8 +1,6 @@
 <?php
 
 return [
-    'headless' => true,
-    'routes' => [
-        'base' => 'admin',
-    ],
+    'headless'      => true,
+    'url_prefix'    => 'nomad',
 ];

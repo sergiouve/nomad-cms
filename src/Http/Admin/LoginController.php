@@ -8,6 +8,6 @@ class LoginController extends Controller
 {
     public function login()
     {
-        return 'login';
+        return view('nomadcms::auth.login');
     }
 }
